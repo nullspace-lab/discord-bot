@@ -6,4 +6,5 @@ resources:
   - serviceaccount.yaml
   - secret-store.yaml
   - external-secret.yaml
+  - external-secret-ghcr.yaml
   - deployment.yaml
