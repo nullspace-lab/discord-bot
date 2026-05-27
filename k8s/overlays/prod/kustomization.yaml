@@ -4,4 +4,4 @@ resources:
   - ../../base
 images:
   - name: ghcr.io/nullspace-lab/discord-bot
-    newTag: 20d12ff
+    newTag: 0f42957
