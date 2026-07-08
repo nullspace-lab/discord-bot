@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: discord-bot
   namespace: discord-bot
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 1
   selector:
@@ -13,11 +15,12 @@ spec:
       labels:
         app: discord-bot
     spec:
-      serviceAccountName: discord-bot
       containers:
         - name: discord-bot
           image: ghcr.io/nullspace-lab/discord-bot:latest
           envFrom:
+            - configMapRef:
+                name: discord-bot
             - secretRef:
                 name: discord-bot
           resources:
